@@ -156,10 +156,10 @@
 
         <!-- Вопрос 3 -->
         <div id="q3" class="content-card">
-            <h2>Считаешь ли ты Мелстроя легендой? 📞</h2>
+            <h2>Считаешь ли ты Мелстроя легендой интернета? 📞</h2>
             <p class="subtitle">Шаг 3 из 10</p>
             <div class="buttons-layout">
-                <button class="btn-quiz-option" onclick="nextQuestion(true, 'q3', 'q4')">Да</button>
+                <button class="btn-quiz-option" onclick="nextQuestion(true, 'q3', 'q4')">Да, легенда! Алло, хамам? Да, улучшить...</button>
                 <button class="btn-quiz-option" onclick="nextQuestion(false, 'q3', 'q4')">Нет, вообще его не смотрю</button>
                 <button class="btn-quiz-option" onclick="nextQuestion(false, 'q3', 'q4')">Кто это такой вообще?</button>
             </div>
@@ -221,7 +221,7 @@
             <div class="buttons-layout">
                 <button class="btn-quiz-option" onclick="nextQuestion(false, 'q8', 'q9')">Скажу «не грусти» и пойду играть в комп</button>
                 <button class="btn-quiz-option" onclick="nextQuestion(true, 'q8', 'q9')">Сразу наберу тебе, и мы поговорим обо всём 📞</button>
-                <button class="btn-quiz-option" onclick="nextQuestion(false, 'q8', 'q9')">Сброшу смешной мем</button>
+                <button class="btn-quiz-option" onclick="nextQuestion(false, 'q8', 'q9')">Сброшу смешной мем и на этом всё</button>
             </div>
         </div>
 
@@ -232,7 +232,7 @@
             <div class="buttons-layout">
                 <button class="btn-quiz-option" onclick="nextQuestion(false, 'q9', 'q10')">Что-то безумно дорогое и роскошное</button>
                 <button class="btn-quiz-option" onclick="nextQuestion(true, 'q9', 'q10')">Что-то, сделанное своими руками и с душой (как этот сайт) ✨</button>
-                <button class="btn-quiz-option" onclick="nextQuestion(false, 'q9', 'q10')">Что-то простое</button>
+                <button class="btn-quiz-option" onclick="nextQuestion(false, 'q9', 'q10')">Просто деньги в конверте</button>
             </div>
         </div>
 

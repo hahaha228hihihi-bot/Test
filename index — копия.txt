@@ -9,8 +9,8 @@
 <body>
     <div class="main-container">
         <div class="content-card">
-            <h1>ПРИВЕТ! ГОТОВА УЗНАТЬ, НАСКОЛЬКО МЫ ПОДХОДИМ ДРУГ К ДРУГУ? 😏</h1>
-            <p class="subtitle">Смотри не ошибись</p>
+            <h1>ПРИВЕТ! ГОТОВА УЗНАТЬ, НАСКОЛЬКО МЫ С ТОБОЙ ПОХОЖИ? 😏</h1>
+            <p class="subtitle">Шаг 0: Важный выбор</p>
             
             <div class="buttons-layout">
                 <!-- Кнопка ДА перенаправляет на тест -->
