@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Привет! ✨</title>
+    <link rel="stylesheet" href="love.css">
+</head>
+<body>
+    <div class="main-container">
+        <div class="content-card">
+            <h1>ПРИВЕТ! ГОТОВА УЗНАТЬ, НАСКОЛЬКО МЫ С ТОБОЙ ПОХОЖИ? 😏</h1>
+            <p class="subtitle">Шаг 0: Важный выбор</p>
+            
+            <div class="buttons-layout">
+                <!-- Кнопка ДА перенаправляет на тест -->
+                <button class="btn-yellow-filled" onclick="window.location.href='quiz.html'">ДА! 💖</button>
+                
+                <!-- Контейнер для кнопки НЕТ / Скрытого текста -->
+                <div id="no-container" style="width: 100%;">
+                    <button id="btn-no" class="btn-yellow-outline" onclick="hideNoButton()">НЕТ 😢</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Полный JS код прямо здесь, файл love.js создавать не нужно -->
+    <script>
+        function hideNoButton() {
+            const container = document.getElementById('no-container');
+            // Удаляем кнопку НЕТ и вставляем удивленный текст
+            container.innerHTML = '<span class="lost-text">Ой, куда она пропала? 😉 Осталась только одна кнопка!</span>';
+        }
+    </script>
+</body>
+</html>
