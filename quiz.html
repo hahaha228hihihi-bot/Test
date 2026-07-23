@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест на совместимость ✨</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #fcfcfc;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .main-container {
+            width: 90%;
+            max-width: 600px;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .content-card {
+            background-color: #ffffff;
+            border-radius: 12px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            display: none;
+        }
+        .content-card.active {
+            display: block;
+            animation: fadeIn 0.4s ease forwards;
+        }
+        h2 {
+            font-size: 24px;
+            color: #ffd32a;
+            font-weight: 700;
+            margin-top: 0;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 35px;
+            font-weight: 600;
+        }
+        .buttons-layout {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .grid-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+        .btn-quiz-option {
+            background-color: #ffffff;
+            color: #2c3e50;
+            border: 3px solid #ffca28;
+            font-size: 16px;
+            font-weight: 600;
+            padding: 16px 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            width: 100%;
+            box-sizing: border-box;
+            text-align: center;
+            transition: all 0.2s;
+        }
+        .btn-quiz-option:hover {
+            background-color: #fffde7;
+            transform: translateY(-1px);
+        }
+        .btn-quiz-option.selected {
+            background-color: #ffca28 !important;
+            color: #2c3e50 !important;
+            border-color: #ffb300 !important;
+        }
+        .btn-next-step {
+            background-color: #ffca28;
+            color: #2c3e50;
+            border: none;
+            font-size: 16px;
+            font-weight: 700;
+            padding: 16px;
+            border-radius: 10px;
+            cursor: pointer;
+            margin-top: 20px;
+            width: 100%;
+            display: none;
+        }
+        .score-badge {
+            display: inline-block;
+            background: #fffde7;
+            border: 3px solid #ffca28;
+            color: #2c3e50;
+            font-size: 32px;
+            font-weight: 700;
+            padding: 12px 28px;
+            border-radius: 12px;
+            margin: 20px 0;
+        }
+        .result-desc {
+            color: #34495e;
+            font-size: 16px;
+            line-height: 1.6;
+            margin: 0;
+            font-weight: 500;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main-container">
+        
+        <!-- Вопрос 1 -->
+        <div id="q1" class="content-card active">
+            <h2>Выбери 2 моих любимых жанра кино: 🍿</h2>
+            <p class="subtitle">Шаг 1 из 10</p>
+            <div class="grid-layout">
+                <button class="btn-quiz-option" onclick="selectMulti(this, 'хоррор')">Хорроры</button>
+                <button class="btn-quiz-option" onclick="selectMulti(this, 'комедия')">Комедии</button>
+                <button class="btn-quiz-option" onclick="selectMulti(this, 'боевик')">Боевики</button>
+                <button class="btn-quiz-option" onclick="selectMulti(this, 'мелодрама')">Мелодрамы</button>
+                <button class="btn-quiz-option" onclick="selectMulti(this, 'фантастика')">Фантастика</button>
+                <button class="btn-quiz-option" onclick="selectMulti(this, 'триллер')">Триллеры</button>
+                <button class="btn-quiz-option" onclick="selectMulti(this, 'драма')">Драмы</button>
+                <button class="btn-quiz-option" onclick="selectMulti(this, 'аниме')">Аниме</button>
+            </div>
+            <button id="q1-next" class="btn-next-step" onclick="checkQ1()">Далее ➔</button>
+        </div>
+
+        <!-- Вопрос 2 -->
+        <div id="q2" class="content-card">
+            <h2>Выбери мои любимые цвета (нужно выбрать 2): 🎨</h2>
+            <p class="subtitle">Шаг 2 из 10</p>
+            <div class="grid-layout">
+                <button class="btn-quiz-option" style="border-color: #e74c3c; color: #e74c3c;" onclick="selectColor(this, 'красный')">Красный</button>
+                <button class="btn-quiz-option" style="border-color: #3498db; color: #3498db;" onclick="selectColor(this, 'синий')">Синий</button>
+                <button class="btn-quiz-option" style="border-color: #2ecc71; color: #2ecc71;" onclick="selectColor(this, 'зеленый')">Зеленый</button>
+                <button class="btn-quiz-option" style="border-color: #000000; color: #000000;" onclick="selectColor(this, 'черный')">Черный</button>
+                <button class="btn-quiz-option" style="border-color: #9b59b6; color: #9b59b6;" onclick="selectColor(this, 'фиолетовый')">Фиолетовый</button>
+                <button class="btn-quiz-option" style="border-color: #cccccc; color: #7f8c8d;" onclick="selectColor(this, 'белый')">Белый</button>
+            </div>
+            <button id="q2-next" class="btn-next-step" onclick="checkQ2()">Далее ➔</button>
+        </div>
+
+        <!-- Вопрос 3 -->
+        <div id="q3" class="content-card">
+            <h2>Считаешь ли ты Мелстроя легендой интернета? 📞</h2>
+            <p class="subtitle">Шаг 3 из 10</p>
+            <div class="buttons-layout">
+                <button class="btn-quiz-option" onclick="nextQuestion(true, 'q3', 'q4')">Да, легенда! Алло, хамам? Да, улучшить...</button>
+                <button class="btn-quiz-option" onclick="nextQuestion(false, 'q3', 'q4')">Нет, вообще его не смотрю</button>
+                <button class="btn-quiz-option" onclick="nextQuestion(false, 'q3', 'q4')">Кто это такой вообще?</button>
+            </div>
+        </div>
+
+        <!-- Вопрос 4 -->
+        <div id="q4" class="content-card">
+            <h2>Кого ты считаешь самым милым животным? 🐾</h2>
+            <p class="subtitle">Шаг 4 из 10</p>
+            <div class="buttons-layout">
+                <button class="btn-quiz-option" onclick="nextQuestion(true, 'q4', 'q5')">Милого пушистого кота 🐱</button>
+                <button class="btn-quiz-option" onclick="nextQuestion(false, 'q4', 'q5')">Большую собаку, чтоб всех защищала 🦮</button>
+                <button class="btn-quiz-option" onclick="nextQuestion(false, 'q4', 'q5')">Капибару, они чилловые 🦦</button>
+                <button class="btn-quiz-option" onclick="nextQuestion(false, 'q4', 'q5')">Рыбок, они молчат</button>
+            </div>
+        </div>
+
+        <!-- Вопрос 5 -->
+        <div id="q5" class="content-card">
+            <h2>Какое время года самое лучшее для прогулок вдвоём? 🍂</h2>
+            <p class="subtitle">Шаг 5 из 10</p>
+            <div class="buttons-layout">
+                <button class="btn-quiz-option" onclick="nextQuestion(false, 'q5', 'q6')">Жаркое лето, чтобы купаться ☀️</button>
+                <button class="btn-quiz-option" onclick="nextQuestion(false, 'q5', 'q6')">Уютная золотая осень в худи 🍁</button>
+                <button class="btn-quiz-option" onclick="nextQuestion(false, 'q5', 'q6')">Цветущая весна, когда всё тает 🌱</button>
+                <button class="btn-quiz-option" onclick="nextQuestion(true, 'q5', 'q6')">Снежная зима, играть в снежки ❄️</button>
+            </div>
+        </div>
+
+<!-- СЮДА ВСТАВИТЬ ВТОРУЮ ЧАСТЬ -->
+              <!-- Вопрос 6 (Старый вопрос 6 про свидание) -->
+        <div id="q6" class="content-card">
+            <h2>Если бы мы пошли на свидание, куда бы мы отправились? 🗺️</h2>
+            <p class="subtitle">Шаг 6 из 10</p>
+            <div class="buttons-layout">
+                <button class="btn-quiz-option" onclick="nextQuestion(false, 'q6', 'q7')">В пафосный ресторан с кучей вилок</button>
+                <button class="btn-quiz-option" onclick="nextQuestion(true, 'q6', 'q7')">Вкусно поесть пиццы / бургеров и погулять в парке 🍔</button>
+                <button class="btn-quiz-option" onclick="nextQuestion(false, 'q6', 'q7')">На ночной сеанс ужастика в кино 🍿</button>
+                <button class="btn-quiz-option" onclick="nextQuestion(false, 'q6', 'q7')">Кататься на аттракционах до тошноты</button>
+            </div>
+        </div>
+
+                <!-- Вопрос 7 -->
+        <div id="q7" class="content-card">
+            <h2>Какое качество в людях я ценю больше всего? ✨</h2>
+            <p class="subtitle">Шаг 7 из 10</p>
+            <div class="buttons-layout">
+                <button class="btn-quiz-option" onclick="nextQuestion(false, 'q7', 'q8')">Искренность и хорошее чувство юмора 😂</button>
+                <button class="btn-quiz-option" onclick="nextQuestion(true, 'q7', 'q8')">Серьёзность и продуктивность 📈 (Теперь правильно!)</button>
+                <button class="btn-quiz-option" onclick="nextQuestion(false, 'q7', 'q8')">Скромность и молчаливость</button>
+            </div>
+        </div>
+
+
+        <!-- Вопрос 8 (Обновленный: Позвоню и поговорю) -->
+        <div id="q8" class="content-card">
+            <h2>Что я сделаю, если у тебя будет плохое настроение? 🥺</h2>
+            <p class="subtitle">Шаг 8 из 10</p>
+            <div class="buttons-layout">
+                <button class="btn-quiz-option" onclick="nextQuestion(false, 'q8', 'q9')">Скажу «не грусти» и пойду играть в комп</button>
+                <button class="btn-quiz-option" onclick="nextQuestion(true, 'q8', 'q9')">Сразу наберу тебе, и мы поговорим обо всём 📞</button>
+                <button class="btn-quiz-option" onclick="nextQuestion(false, 'q8', 'q9')">Сброшу смешной мем и на этом всё</button>
+            </div>
+        </div>
+
+        <!-- Вопрос 9 (Обновленный: Сделанное с душой) -->
+        <div id="q9" class="content-card">
+            <h2>Идеальный подарок на праздник — это... 🎁</h2>
+            <p class="subtitle">Шаг 9 из 10</p>
+            <div class="buttons-layout">
+                <button class="btn-quiz-option" onclick="nextQuestion(false, 'q9', 'q10')">Что-то безумно дорогое и роскошное</button>
+                <button class="btn-quiz-option" onclick="nextQuestion(true, 'q9', 'q10')">Что-то, сделанное своими руками и с душой (как этот сайт) ✨</button>
+                <button class="btn-quiz-option" onclick="nextQuestion(false, 'q9', 'q10')">Просто деньги в конверте</button>
+            </div>
+        </div>
+
+        <!-- Вопрос 10 (Финальный) -->
+        <div id="q10" class="content-card">
+            <h2>Ну и финальный вопрос: мы продолжим общаться после этого теста? 😏</h2>
+            <p class="subtitle">Шаг 10 из 10</p>
+            <div class="buttons-layout">
+                <button class="btn-quiz-option" onclick="nextQuestion(true, 'q10', 'result')">Определённо да! Напишу тебе прямо сейчас 💬</button>
+                <button class="btn-quiz-option" onclick="nextQuestion(true, 'q10', 'result')">Конечно, надо обсудить результаты за чаем ☕</button>
+            </div>
+        </div>
+
+        <!-- Экран результатов -->
+        <div id="result" class="content-card">
+            <h1>Твой результат 🎉</h1>
+            <p class="subtitle">Итог теста</p>
+            <div class="score-badge" id="score-output">0 / 10</div>
+            <p class="result-desc" id="text-output"></p>
+        </div>
+
+    </div> <!-- Конец main-container -->
+
+    <script>
+        var score = 0;
+        var totalQuestions = 10;
+        
+        var selectedGenres = [];
+        var selectedColors = [];
+
+        function nextScreen(currentId, nextId) {
+            document.getElementById(currentId).classList.remove('active');
+            document.getElementById(nextId).classList.add('active');
+        }
+
+        function nextQuestion(isCorrect, currentId, nextId) {
+            if (isCorrect) {
+                score++;
+            }
+            nextScreen(currentId, nextId);
+            if (nextId === 'result') {
+                showFinalResults();
+            }
+        }
+
+        function selectMulti(button, val) {
+            if (selectedGenres.includes(val)) {
+                selectedGenres = selectedGenres.filter(function(g) { return g !== val; });
+                button.classList.remove('selected');
+            } else {
+                if (selectedGenres.length < 2) {
+                    selectedGenres.push(val);
+                    button.classList.add('selected');
+                }
+            }
+            
+            if (selectedGenres.length === 2) {
+                document.getElementById('q1-next').style.display = 'block';
+            } else {
+                document.getElementById('q1-next').style.display = 'none';
+            }
+        }
+
+        function checkQ1() {
+            if (selectedGenres.includes('хоррор') && selectedGenres.includes('боевик')) {
+                score++;
+            }
+            nextScreen('q1', 'q2');
+        }
+
+        function selectColor(button, colorName) {
+            var colorMap = {
+                'красный': '#e74c3c', 'синий': '#3498db', 'зеленый': '#2ecc71',
+                'черный': '#000000', 'фиолетовый': '#9b59b6', 'белый': '#ffffff'
+            };
+
+            if (selectedColors.includes(colorName)) {
+                selectedColors = selectedColors.filter(function(c) { return c !== colorName; });
+                button.classList.remove('selected');
+                button.style.backgroundColor = '#ffffff';
+                button.style.color = colorMap[colorName];
+            } else {
+                if (selectedColors.length < 2) {
+                    selectedColors.push(colorName);
+                    button.classList.add('selected');
+                    button.style.backgroundColor = colorMap[colorName];
+                    if (colorName === 'белый') {
+                        button.style.color = '#2c3e50';
+                    } else {
+                        button.style.color = '#ffffff';
+                    }
+                }
+            }
+
+            if (selectedColors.length === 2) {
+                document.getElementById('q2-next').style.display = 'block';
+            } else {
+                document.getElementById('q2-next').style.display = 'none';
+            }
+        }
+
+        function checkQ2() {
+            if (selectedColors.includes('белый') && selectedColors.includes('черный')) {
+                score++;
+            }
+            nextScreen('q2', 'q3');
+        }
+
+        function showFinalResults() {
+            var percentage = Math.round((score / totalQuestions) * 100);
+            document.getElementById('score-output').innerText = score + ' / ' + totalQuestions + ' (' + percentage + '%)';
+            
+            var resultText = "";
+            if (score >= 8) {
+                resultText = "ОГО! МЫ С ТОБОЙ СЛОВНО ОДИН ЧЕЛОВЕК! У нас невероятно схожие интересы, нужно срочно это обсудить за чашкой кофе! ☕✨";
+            } else if (score >= 5) {
+                resultText = "О, У НАС С ТОБОЙ СХОЖИЕ ИНТЕРЕСЫ, НО НЕ ВО ВСЁМ! Надо узнать друг друга получше, согласна? 😏 Напиши мне!";
+            } else {
+                resultText = "Хмм, мы довольно разные, и это даже круто! Противоположности притягиваются. Давай пообщаемся поближе и найдем общие точки? 🗺️";
+            }
+            document.getElementById('text-output').innerText = resultText;
+        }
+    </script>
+</body>
+</html>
